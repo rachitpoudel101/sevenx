@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SevenX</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+      integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      .revolve {
+        animation: delayed-spin 7s linear infinite;
+        animation-delay: 1s; /* Delay before starting the spin */
+      }
+      @keyframes delayed-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      /* .swiper {
+      width: 100%;
+      height: 100%;
+    } */
+
+      .swiper-slide {
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide {
+        display: block;
+        /* width: 100%;
+      height: 100%; */
+        object-fit: cover;
+      }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <!-- {{-- navbar --}} -->
+    <nav class="bg-gray-50 p-2 items-center flex justify-around">
+      <!-- <div class="flex justify-between w-full"> -->
+      <img class="h-24 " src="./images/logo.png" alt="" />
+      <div
+        class="flex lg:hidden justify-between bg-white rounded-xl top-3 pt-1"
+      >
+        <div class="menu lg:hidden" onclick="toggleSidebar()">
+          <a href="#" class="nav-toggle hover-link">
+            <i class="ri-menu-line" id="icon"></i
+          ></a>
+        </div>
+      </div>
+      <!-- </div> -->
+      <div class="lg:flex pt-8 space-x-10 hidden mb-10">
+        <a class="text-[#1D2130] font-semibold text-lg" href="#">Home</a>
+        <a class="text-[#1D2130] font-semibold text-lg" href="#">Pages</a>
+        <a class="text-[#1D2130] font-semibold text-lg" href="#">Elements</a>
+        <a class="text-[#1D2130] font-semibold text-lg" href="#">Courses</a>
+        <a class="text-[#1D2130] font-semibold text-lg" href="#">News</a>
+        <a class="text-[#1D2130] font-semibold text-lg" href="#">Contact</a>
+      </div>
+
+      <div
+        class="bg-[#1D2130] hidden lg:flex p-3 px-8 font-semibold text-white rounded-md"
+      >
+        QUERY
+      </div>
+    </nav>
+
+    <!-- main -->
+    <section
+      class="relative grid lg:grid-cols-2 mx-[16px] lg:mx-20 2xl:mt-28 mt-[16px] 2xl:gap-28 gap-10"
+    >
+      <div class="2xl:space-y-20 space-y-10">
+        <p
+          class="xl:text-7xl md:text-5xl text-3xl text-primary font-semibold 2xl:leading-28"
+        >
+          Innovation That Reshapes Industries & Inspires Progress
+        </p>
+        <div class="pl-5 flex flex-wrap gap-12">
+          <button class="px-8 p-3 text-xl text-white bg-[#091B29] rounded-md">
+            Get Started
+          </button>
+          <button class="flex gap-4 text-xl items-center">
+            <img class="" src="./images/Play.png" alt="" />
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:pb-20">
+        <img class="rounded-full w-full" src="./images/main .png" alt="" />
+      </div>
+      <!-- cards -->
+      <div class="lg:hidden space-y-10 flex-wrap">
+        <div class="shadow-lg rounded-xl p-3">
+          <p class="font-bold text-[#1D2130] space-y-2">100% Business Growth</p>
+          <div class="flex gap-2">
+            <i class="ri-star-s-fill text-yellow-500"></i>
+            <p class="font-bold">4.9</p>
+            <p class="text-gray-500">(1520 Reviews)</p>
+          </div>
+        </div>
+
+        <div class="shadow-lg rounded-xl p-3">
+          <p class="font-bold text-[#1D2130] space-y-2">100% Business Growth</p>
+          <div class="flex gap-2">
+            <i class="ri-star-s-fill text-yellow-500"></i>
+            <p class="font-bold">4.9</p>
+            <p class="text-gray-500">(1520 Reviews)</p>
+          </div>
+        </div>
+
+        <div class="shadow-lg rounded-xl p-3">
+          <p class="font-bold text-[#1D2130] space-y-2">100% Business Growth</p>
+          <div class="flex gap-2">
+            <i class="ri-star-s-fill text-yellow-500"></i>
+            <p class="font-bold">4.9</p>
+            <p class="text-gray-500">(1520 Reviews)</p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="hidden lg:flex">
+        <div
+          class="flex gap-3 w-72 shadow-lg rounded-xl p-3 items-center absolute top-20 right-96"
+        >
+          <div>
+            <img class="w-10" src="./images/Activity.png" alt="" />
+          </div>
+
+          <div>
+            <p class="font-bold text-[#1D2130] pb-1">100% Business Growth</p>
+            <div class="flex gap-2">
+              <i class="ri-star-s-fill text-yellow-500"></i>
+              <p class="font-bold">4.9</p>
+              <p class="text-gray-500">(1520 Reviews)</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex gap-3 w-72 shadow-lg rounded-xl p-3 items-center absolute top-[75%] right-[40%]"
+        >
+          <div>
+            <img class="w-10" src="./images/Activity.png" alt="" />
+          </div>
+
+          <div>
+            <p class="font-bold text-[#1D2130] space-y-2">
+              100% Business Growth
+            </p>
+            <div class="flex gap-2">
+              <i class="ri-star-s-fill text-yellow-500"></i>
+              <p class="font-bold">4.9</p>
+              <p class="text-gray-500">(1520 Reviews)</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex gap-3 w-72 shadow-lg rounded-xl p-3 items-center absolute bottom-0 right-10"
+        >
+          <div>
+            <img class="w-10" src="./images/Activity.png" alt="" />
+          </div>
+
+          <div>
+            <p class="font-bold text-[#1D2130] pb-1">100% Business Growth</p>
+            <div class="flex gap-2">
+              <i class="ri-star-s-fill text-yellow-500"></i>
+              <p class="font-bold">4.9</p>
+              <p class="text-gray-500">(1520 Reviews)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- WHAT WE DO -->
+    <section class="py-10">
+      <div class="flex gap-4 items-center pt-6">
+        <p class="w-32 h-[1px] bg-[#1D2130]"></p>
+        <p class="text-sm font-semibold text-[#1D2130] 2xl:text-lg">
+          WHAT WE DO
+        </p>
+      </div>
+      <div class="flex justify-around flex-wrap space-y-8">
+        <img src="./images/Fictional company logo (1).png" alt="" />
+        <img src="./images/Fictional company logo (2).png" alt="" />
+        <img src="./images/Fictional company logo (3).png" alt="" />
+        <img src="./images/Fictional company logo (4).png" alt="" />
+      </div>
+
+      <div class="text-center">
+        <p class="font-semibold text-xl py-8">
+          requests as you leave-no credit
+        </p>
+
+        <button class="px-8 p-3 text-xl text-white bg-[#091B29] rounded-md">
+          About Us
+        </button>
+      </div>
+
+      <!--  -->
+      <div class="grid lg:grid-cols-3 2xl:gap-20 gap-10 2xl:py-20 mx-[16px]">
+        <div class="relative">
+          <img
+            class="w-32 bg-black rounded-[50%] p-5"
+            src="./images/Mask group.png"
+            alt=""
+          />
+
+          <img
+            class="absolute top-16 left-28 w-96 hidden md:flex"
+            src="./images/Vector 292.png"
+            alt=""
+          />
+          <p class="text-xl font-semibold py-3">Subscribe & get started</p>
+          <p class="">
+            Submit as many design tasks as you need without worrying about
+            individual project fees.
+          </p>
+        </div>
+
+        <div class="relative">
+          <img
+            class="w-32 bg-black rounded-[50%] p-5"
+            src="./images/Mask group (1).png"
+            alt=""
+          />
+          <img
+            class="absolute top-16 left-24 w-96 hidden md:flex"
+            src="./images/Vector 292.png"
+            alt=""
+          />
+          <p class="text-xl font-semibold py-3">Subscribe & get started</p>
+          <p class="">
+            Submit as many design tasks as you need without worrying about
+            individual project fees.
+          </p>
+        </div>
+        <div class="relative">
+          <img
+            class="w-32 bg-black rounded-[50%] p-5"
+            src="./images/Mask group (2).png"
+            alt=""
+          />
+
+          <p class="text-xl font-semibold py-3">Subscribe & get started</p>
+          <p class="">
+            Submit as many design tasks as you need without worrying about
+            individual project fees.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-[#DCCBCB] w-full h-32"></div>
+    <!--Our Vision & Our Goal  -->
+    <section class="lg:py-20 py-10">
+      <p class="text-center text-xl text-[#8A898E] font-semibold">SERVICE</p>
+      <p class="text-center lg:text-6xl text-3xl font-semibold">
+        Our Vision & Our Goal
+      </p>
+
+      <div class="relative py-20">
+        <img
+          class="revolve hidden absolute bottom-5 right-5 overflow-hidden"
+          src="./images/Ellipse 13.png"
+          alt=""
+        />
+
+        <img class="w-[90%] z-10" src="./images/Rectangle 2.png" alt="" />
+        <img
+          class="absolute top-28 left-10 w-[20%]"
+          src="./images/Untitled design 1_layerstyle.png"
+          alt=""
+        />
+
+        <!-- Swiper -->
+        <div class="absolute top-[50%] left-[30%] w-[1200px] swiper mySwiper">
+          <div class="swiper-wrapper flex overflow-hidden">
+            <div class="swiper-slide">
+              <div class="bg-white space-y-2 p-5">
+                <img
+                  class="bg-[#1E1E1E] p-2 rounded-lg 2xl:w-16"
+                  src="./images/group.png"
+                  alt=""
+                />
+                <p class="font-semibold">Website Design</p>
+                <p>
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s.
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide rounded-lg">
+              <div class="bg-white space-y-2 p-5">
+                <img
+                  class="bg-[#1E1E1E] p-2 rounded-lg 2xl:w-16"
+                  src="./images/group.png"
+                  alt=""
+                />
+                <p class="font-semibold">Website Design</p>
+                <p>
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s.
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="bg-white space-y-2 p-5">
+                <img
+                  class="bg-[#1E1E1E] p-2 rounded-lg 2xl:w-16"
+                  src="./images/group.png"
+                  alt=""
+                />
+                <p class="font-semibold">Website Design</p>
+                <p>
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-white space-y-2 p-5">
+                <img
+                  class="bg-[#1E1E1E] p-2 rounded-lg 2xl:w-16"
+                  src="./images/group.png"
+                  alt=""
+                />
+                <p class="font-semibold">Website Design</p>
+                <p>
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-white space-y-2 p-5">
+                <img
+                  class="bg-[#1E1E1E] p-2 rounded-lg 2xl:w-16"
+                  src="./images/group.png"
+                  alt=""
+                />
+                <p class="font-semibold">Website Design</p>
+                <p>
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s.
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="bg-white space-y-2 p-5">
+                <img
+                  class="bg-[#1E1E1E] p-2 rounded-lg 2xl:w-16"
+                  src="./images/group.png"
+                  alt=""
+                />
+                <p class="font-semibold">Website Design</p>
+                <p>
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-pagination text-black"></div>
+        </div>
+      </div>
+    </section>
+    <!--projects  -->
+    <section>
+      <p class="text-3xl lg:text-6xl text-center font-semibold">My Projects</p>
+      <p class="text-xl text-center py-8">
+        Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam mauris
+        est risus lectus. Phasellus consequat urna tellus
+      </p>
+
+      <div class="lg:flex justify-center space-x-10 hidden py-10">
+        <a class="bg-[#091B29] text-white p-2 rounded-md px-3" href="#">Home</a>
+        <a class="bg-[#091B29] text-white p-2 rounded-md px-3" href="#"
+          >Pages</a
+        >
+        <a class="bg-[#091B29] text-white p-2 rounded-md px-3" href="#"
+          >Elements</a
+        >
+        <a class="bg-[#091B29] text-white p-2 rounded-md px-3" href="#"
+          >Courses</a
+        >
+        <a class="bg-[#091B29] text-white p-2 rounded-md px-3" href="#">News</a>
+        <a class="bg-[#091B29] text-white p-2 rounded-md px-3" href="#"
+          >Contact</a
+        >
+      </div>
+
+      <div class="grid lg:grid-cols-3 lg:ml-28 my-10">
+        <!--  -->
+        <div>
+          <div class="bg-[#D5DEE5] relative w-[450px] h-[500px] rounded-lg">
+            <img
+              class="absolute right-8 object-cover overflow-hidden h-full"
+              src="./images/ss.png"
+              alt=""
+            />
+            <img
+              class="absolute left-8 -bottom-1 object-cover overflow-hidden"
+              src="./images/Web Designs.png"
+              alt=""
+            />
+          </div>
+          <p class="mt-5 text-lg font-semibold">Web Design</p>
+          <p class="text-xl font-bold">AirCalling Landing Page Design</p>
+        </div>
+        <div>
+          <div class="bg-[#D5DEE5] relative w-[450px] h-[500px] rounded-lg">
+            <img
+              class="absolute right-8 object-cover overflow-hidden h-full"
+              src="./images/ss.png"
+              alt=""
+            />
+            <img
+              class="absolute left-8 -bottom-1 object-cover overflow-hidden"
+              src="./images/Web Designs.png"
+              alt=""
+            />
+          </div>
+          <p class="mt-5 text-lg font-semibold">Web Design</p>
+          <p class="text-xl font-bold">AirCalling Landing Page Design</p>
+        </div>
+        <div>
+          <div class="bg-[#D5DEE5] relative w-[450px] h-[500px] rounded-lg">
+            <img
+              class="absolute right-8 object-cover overflow-hidden h-full"
+              src="./images/ss.png"
+              alt=""
+            />
+            <img
+              class="absolute left-8 -bottom-1 object-cover overflow-hidden"
+              src="./images/Web Designs.png"
+              alt=""
+            />
+          </div>
+          <p class="mt-5 text-lg font-semibold">Web Design</p>
+          <p class="text-xl font-bold">AirCalling Landing Page Design</p>
+        </div>
+      </div>
+    </section>
+    <!-- testimonials -->
+    <section class="lg:py-20 py-10 relative">
+      <p class="text-center text-xl text-[#8A898E] font-semibold">
+        TESTIMONIALS
+      </p>
+      <p class="text-center lg:text-6xl text-3xl font-semibold">
+        What Clients say about us
+      </p>
+
+      <img
+        class="absolute h-[100vh] top-0 -right-20 overflow-hidden"
+        src="./images/Untitled design 1_layerstyle.png"
+        alt=""
+      />
+      <!--  -->
+      <div class="grid grid-cols-2 space-y-10 my-10 mx-20">
+        <div class="flex gap-10">
+          <div>
+            <img class="w-40 rounded-lg" src="./images/test-1.png" alt="" />
+          </div>
+          <div>
+            <p class="text-[#525560] font-semibold">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+            <p class="my-4 text-gray-400">Rayhan Curran</p>
+          </div>
+        </div>
+        <div class="flex gap-5">
+          <div>
+            <img class="w-40 rounded-lg" src="./images/test-1.png" alt="" />
+          </div>
+          <div>
+            <p class="text-[#525560] font-semibold">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+            <p class="my-4 text-gray-400">Rayhan Curran</p>
+          </div>
+        </div>
+        <div class="flex gap-5">
+          <div>
+            <img class="w-40 rounded-lg" src="./images/test-1.png" alt="" />
+          </div>
+          <div>
+            <p class="text-[#525560] font-semibold">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+            <p class="my-4 text-gray-400">Rayhan Curran</p>
+          </div>
+        </div>
+        <div class="flex gap-5">
+          <div>
+            <img class="w-40 rounded-lg" src="./images/test-1.png" alt="" />
+          </div>
+          <div>
+            <p class="text-[#525560] font-semibold">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+            <p class="my-4 text-gray-400">Rayhan Curran</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- our teams -->
+    <section>
+      <p class="text-center text-xl text-[#8A898E] font-semibold">OUR TEAMS</p>
+      <p class="text-center lg:text-6xl text-3xl font-semibold">
+        Meet Our Teams
+      </p>
+
+      <div class="grid lg:grid-cols-3 gap-28 mx-20 my-10">
+        <div class="border border-gray-400 p-5">
+          <img
+            class="rounded-full w-20 ml-24"
+            src="./images/test-3.png"
+            alt=""
+          />
+          <p class="text-xl font-semibold text-center space-y-10">
+            Aneesa Mishra
+          </p>
+          <p class="text-gray-400 text-center">UI DESIGNER</p>
+          <div class="">
+            <button class=""><i class="ri-twitter-x-line"></i></button>
+            <i class="ri-facebook-box-fill"></i>
+            <i class="ri-whatsapp-line"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 40,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
